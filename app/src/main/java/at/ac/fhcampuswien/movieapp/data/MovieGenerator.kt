@@ -6,13 +6,21 @@ class MovieGenerator {
         val getInitMovies: List<Movie> = listOf(
             Movie(
                 "Captain Marvel",
-                "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   \n" +
-                        "\n" +
-                        "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet",
-                4.5F,
-                "Action, Fantasy, Science-Fiction",
-                "Roy Thomas, Gene Colan",
-                "Brie Larson, Jude Law, Ben Mendelsohn"
+                "Captain Marvel is an extraterrestrial Kree warrior who finds herself caught in the middle of an " +
+                        "intergalactic battle between her people and the Skrulls. Living on Earth in 1995, she keeps having " +
+                        "recurring memories of another life as U.S. Air Force pilot Carol Danvers. With help from Nick Fury, " +
+                        "Captain Marvel tries to uncover the secrets of her past while harnessing her special superpowers to end " +
+                        "the war with the evil Skrulls.",
+                3.7F,
+                mutableListOf(
+                    ("Action"), ("Fantasy"), ("Sci Fi"), ("Adventure")
+                ),
+                mutableListOf(
+                    ("Anna Boden"), ("Ryan Fleck"), ("Geneva Robertson-Dworet"), ("Jac Schaeffer")
+                ),
+                mutableListOf(
+                    ("Brie Larson"), ("Samuel L. Jackson"), ("Jude Law"), ("Ben Mendelsohn")
+                )
             )
         )
     }
