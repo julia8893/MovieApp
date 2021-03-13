@@ -5,8 +5,6 @@
 
     <data>
 
-        <import type="at.ac.fhcampuswien.movieapp.ui.MovieViewModel" />
-
         <variable
             name="viewModelXML"
             type="at.ac.fhcampuswien.movieapp.ui.MovieViewModel" />
@@ -19,7 +17,6 @@
         android:padding="16dp"
         tools:context=".ui.MovieFragment">
 
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton"
             android:layout_width="wrap_content"
@@ -27,6 +24,7 @@
             android:layout_gravity="bottom|end"
             android:layout_marginBottom="24dp"
             android:clickable="true"
+            android:contentDescription="@string/content_description_add_something"
             android:onClick="@{() -> viewModelXML.onClick()}"
             android:src="@drawable/ic_baseline_add_24"
             app:backgroundTint="@color/yellow"
@@ -36,8 +34,11 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout_editor_absoluteX="69dp"
-            tools:layout_editor_absoluteY="-42dp">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -47,6 +48,7 @@
                     android:id="@+id/imageView"
                     android:layout_width="141dp"
                     android:layout_height="223dp"
+                    android:contentDescription="@string/content_description_movie_poster"
                     android:src="@drawable/captain_marvel"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"

@@ -30,7 +30,6 @@ class MovieFragment : Fragment() {
         binding.viewModelXML = viewModel
         binding.lifecycleOwner = this
 
-
         /**
          * Observer
          */
@@ -39,10 +38,7 @@ class MovieFragment : Fragment() {
             Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
         })
 
-
         return binding.root
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
