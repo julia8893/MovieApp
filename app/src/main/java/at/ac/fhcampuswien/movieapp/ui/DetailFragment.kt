@@ -6,14 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import at.ac.fhcampuswien.movieapp.R
-import at.ac.fhcampuswien.movieapp.databinding.MovieFragmentBinding
+import at.ac.fhcampuswien.movieapp.databinding.FragmentDetailBinding
 
-class MovieFragment : Fragment() {
+class DetailFragment : Fragment() {
 
     private lateinit var viewModel: MovieViewModel
 
@@ -22,9 +21,9 @@ class MovieFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding: MovieFragmentBinding = DataBindingUtil.inflate<MovieFragmentBinding>(
+        val binding: FragmentDetailBinding = DataBindingUtil.inflate<FragmentDetailBinding>(
             // Inflate the layout for this fragment
-            inflater, R.layout.movie_fragment, container, false
+            inflater, R.layout.fragment_detail, container, false
         )
         viewModel = ViewModelProvider(this).get(MovieViewModel::class.java)
         binding.viewModelXML = viewModel
