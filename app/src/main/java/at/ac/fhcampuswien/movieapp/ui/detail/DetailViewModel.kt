@@ -1,15 +1,25 @@
-package at.ac.fhcampuswien.movieapp.ui
+package at.ac.fhcampuswien.movieapp.ui.detail
 
+import android.app.Application
+import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import at.ac.fhcampuswien.movieapp.data.Movie
 import at.ac.fhcampuswien.movieapp.data.MovieGenerator
+
+@BindingAdapter("android:customImage")
+fun setCustomImage(view: ImageView, value: Int?) {
+    value?.let {
+        view.setImageResource(value)
+    }
+}
 
 // CUSTOM
 // Properly render the list data in your layout.xml file by using BindingAdapters
@@ -55,15 +65,16 @@ fun rating(view: RatingBar, value: Float) {
 }
 
 
-class MovieViewModel : ViewModel() {
+class DetailViewModel(
+    application: Application,
+    selMovie: Movie
+) : AndroidViewModel(application) {
 
-    private var _movies = MutableLiveData<List<Movie>>()
-    val movies: LiveData<List<Movie>>
-        get() = _movies
 
     private var _selectedMovie = MutableLiveData<Movie>()
     val selectedMovie: LiveData<Movie>
         get() = _selectedMovie
+
 
     private var _floatingActionButtonPressed = MutableLiveData<Boolean>()
     val floatingActionButtonPressed: LiveData<Boolean>
@@ -71,11 +82,7 @@ class MovieViewModel : ViewModel() {
 
 
     init {
-        _movies.value = MovieGenerator.getInitMovies
-
-        val movies = MovieGenerator.getInitMovies
-
-        _selectedMovie = MutableLiveData(movies[0])
+        _selectedMovie.value = selMovie
     }
 
     fun onClick() {

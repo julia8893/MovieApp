@@ -8,7 +8,7 @@
 
         <variable
             name="viewModelXML"
-            type="at.ac.fhcampuswien.movieapp.ui.MovieViewModel" />
+            type="at.ac.fhcampuswien.movieapp.ui.home.HomeViewModel" />
     </data>
 
     <LinearLayout
@@ -16,14 +16,15 @@
         android:layout_height="match_parent"
         android:background="@color/black"
         android:orientation="vertical"
-        tools:context=".ui.HomeFragment">
+        tools:context=".ui.home.HomeFragment">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
-            android:text="Welcome to MovieApp!"
+            android:text="@string/welcome_to_movieapp"
             android:textColor="@color/white"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/scrollView" />

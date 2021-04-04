@@ -1,4 +1,4 @@
-package at.ac.fhcampuswien.movieapp.ui
+package at.ac.fhcampuswien.movieapp.ui.detail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,12 +9,18 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.navArgs
 import at.ac.fhcampuswien.movieapp.R
+import at.ac.fhcampuswien.movieapp.data.Movie
 import at.ac.fhcampuswien.movieapp.databinding.FragmentDetailBinding
 
 class DetailFragment : Fragment() {
 
-    private lateinit var viewModel: MovieViewModel
+    private lateinit var viewModel: DetailViewModel
+    private lateinit var factory: DetailViewModelFactory
+    private lateinit var selectedMovie: Movie
+
+    private val args by navArgs<DetailFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,7 +31,11 @@ class DetailFragment : Fragment() {
             // Inflate the layout for this fragment
             inflater, R.layout.fragment_detail, container, false
         )
-        viewModel = ViewModelProvider(this).get(MovieViewModel::class.java)
+
+        selectedMovie = args.currentMovie
+        factory = DetailViewModelFactory(requireActivity().application, selectedMovie)
+        viewModel = ViewModelProvider(this, factory).get(DetailViewModel::class.java)
+
         binding.viewModelXML = viewModel
         binding.lifecycleOwner = this
 
